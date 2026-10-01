@@ -1,4 +1,4 @@
-# my-tui-fm
+# finder
 
 A modern, fast TUI (Terminal User Interface) file manager written in Rust using [ratatui](https://github.com/ratatui/ratatui), with nvim-style keybindings. Inspired by superfile — with git integration, fully asynchronous previews (archive listing and syntax highlighting render on background threads), disk-usage mode and a single static binary.
 
@@ -15,7 +15,7 @@ A modern, fast TUI (Terminal User Interface) file manager written in Rust using 
 - **Disk Usage**: `S` toggles recursive directory sizes — computed on a background thread, shown in the list, in the preview and as a total in the header
 - **Bookmarks**: Mark directories (`m` + key), jump back (`'` + key), or browse them in a clickable, scrollable popup (`w`) — persisted in the config
 - **Trash**: `dd` moves to the OS trash (macOS `~/.Trash` / XDG trash), `:restore` undoes; `D`/`:rm` delete permanently
-- **Config file**: `~/.config/my-tui-fm/config.toml` — start dir, hidden-files default, sort order, theme, bookmarks (sort + hidden-file state are saved on exit too)
+- **Config file**: `~/.config/finder/config.toml` — start dir, hidden-files default, sort order, theme, bookmarks (sort + hidden-file state are saved on exit too)
 - **Mouse Support**: Click to select, double-click to open, scroll wheel per pane (list scrolls, preview scrolls under the pointer), popups clickable
 - **Standard Navigation**: Arrow keys, PgUp/PgDn, Home/End — plus vim-style motions as a bonus
 - **nvim-style Modes**: Normal, Visual (multi-select), Search, and Command modes with a mode badge
@@ -141,12 +141,12 @@ Press `Enter` to execute, `Esc` to cancel.
 ## Installation
 
 ```bash
-git clone https://github.com/abhskyd/my-tui-fm
-cd my-tui-fm
+git clone https://github.com/abhskyd/finder
+cd finder
 cargo build --release
 ```
 
-The binary will be at `target/release/my-tui-fm`.
+The binary will be at `target/release/finder`.
 
 ### Default (archive previews + extract/compress)
 ```bash
@@ -168,10 +168,10 @@ Features: `archive` (zip/tar/tar.gz contents listing, extraction and compression
 
 ## Configuration
 
-The app reads and writes `~/.config/my-tui-fm/config.toml`:
+The app reads and writes `~/.config/finder/config.toml`:
 
 ```toml
-# my-tui-fm configuration
+# finder configuration
 # theme: mocha | macchiato | tokyo night | rose pine | nord
 # bookmarks: `<key> = "<path>"` — jump with ' + key
 

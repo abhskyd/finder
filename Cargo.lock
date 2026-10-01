@@ -245,6 +245,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ef25905e51abafe4dcea6c15fec58c57b601cdbd0ee53d22ea1d3016c587d39b"
 
 [[package]]
+name = "finder"
+version = "0.1.0"
+dependencies = [
+ "crossterm",
+ "flate2",
+ "ignore",
+ "libloading",
+ "path-absolutize",
+ "ratatui",
+ "serde",
+ "syntect",
+ "tar",
+ "tokio",
+ "toml",
+ "tracing",
+ "tracing-subscriber",
+ "unicode-width",
+ "walkdir",
+ "zip",
+]
+
+[[package]]
 name = "flate2"
 version = "1.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -439,28 +461,6 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys 0.61.2",
-]
-
-[[package]]
-name = "my-tui-fm"
-version = "0.1.0"
-dependencies = [
- "crossterm",
- "flate2",
- "ignore",
- "libloading",
- "path-absolutize",
- "ratatui",
- "serde",
- "syntect",
- "tar",
- "tokio",
- "toml",
- "tracing",
- "tracing-subscriber",
- "unicode-width",
- "walkdir",
- "zip",
 ]
 
 [[package]]

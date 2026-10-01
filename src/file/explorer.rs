@@ -965,7 +965,7 @@ mod tests {
 
     #[test]
     fn read_dir_skips_the_directory_itself() {
-        let tmp = std::env::temp_dir().join("my_tui_fm_test_self");
+        let tmp = std::env::temp_dir().join("finder_tui_test_self");
         let _ = fs::remove_dir_all(&tmp);
         fs::create_dir_all(&tmp).unwrap();
         fs::write(tmp.join("a.txt"), "x").unwrap();
@@ -979,7 +979,7 @@ mod tests {
 
     #[test]
     fn read_dir_hides_dotfiles_unless_requested() {
-        let tmp = std::env::temp_dir().join("my_tui_fm_test_hidden");
+        let tmp = std::env::temp_dir().join("finder_tui_test_hidden");
         let _ = fs::remove_dir_all(&tmp);
         fs::create_dir_all(&tmp).unwrap();
         fs::write(tmp.join(".hidden"), "x").unwrap();

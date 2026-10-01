@@ -1,4 +1,4 @@
-//! Configuration file support: `~/.config/my-tui-fm/config.toml`.
+//! Configuration file support: `~/.config/finder/config.toml`.
 //!
 //! Holds general settings, the theme, and directory bookmarks. The config is
 //! loaded at startup and saved when bookmarks/theme change and on exit.
@@ -73,13 +73,13 @@ fn default_theme_name() -> String {
 }
 
 impl Config {
-    /// Path of the config file: `~/.config/my-tui-fm/config.toml`.
+    /// Path of the config file: `~/.config/finder/config.toml`.
     pub fn path() -> Option<PathBuf> {
         let base = std::env::var_os("XDG_CONFIG_HOME")
             .map(PathBuf::from)
             .filter(|p| p.is_absolute())
             .or_else(|| home_dir().map(|h| h.join(".config")))?;
-        Some(base.join("my-tui-fm").join("config.toml"))
+        Some(base.join("finder").join("config.toml"))
     }
 
     /// Load the config, falling back to defaults for missing fields/files.
@@ -143,7 +143,7 @@ impl Config {
     /// The config file with a helpful header, as written to disk.
     pub fn render(&self) -> String {
         let mut out = String::from(
-            "# my-tui-fm configuration\n\
+            "# finder configuration\n\
              # theme: mocha | macchiato | tokyo night | rose pine | nord\n\
              # bookmarks: `<key> = \"<path>\"` — jump with ' + key\n\n",
         );

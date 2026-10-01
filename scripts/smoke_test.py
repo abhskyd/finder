@@ -3,7 +3,7 @@
 import os, pty, sys, time, fcntl, termios, struct, select, signal
 import pyte
 
-BINARY = os.path.abspath("./target/debug/my-tui-fm")
+BINARY = os.path.abspath("./target/debug/finder")
 
 def run(keys, rows=30, cols=110, settle=0.35, cwd=None, binary=None):
     binary = binary or BINARY
@@ -15,7 +15,7 @@ def run(keys, rows=30, cols=110, settle=0.35, cwd=None, binary=None):
         if cwd:
             os.chdir(cwd)
         try:
-            os.execv(binary, ["my-tui-fm"])
+            os.execv(binary, ["finder"])
         finally:
             os._exit(1)
     fcntl.ioctl(fd, termios.TIOCSWINSZ, struct.pack("HHHH", rows, cols, 0, 0))
@@ -112,7 +112,7 @@ def main(which):
     if which in ("all", "basic"):
         raw, s = run([1.2, b"j", 0.5, b"j", 0.5, b"q", 0.6])
         t = s[0]
-        check("basic: app renders", "my-tui-fm" in t and "NORMAL" in t and "Ready" in t)
+        check("basic: app renders", "finder" in t and "NORMAL" in t and "Ready" in t)
 
     if which in ("all", "help"):
         raw, s = run([1.2, b"?"] + [b"j", 0.1] * 30 + [0.4, b"\x1b", 0.4, b"q", 0.6])

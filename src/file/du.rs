@@ -104,7 +104,7 @@ mod tests {
 
     #[test]
     fn sizes_are_recursive() {
-        let tmp = std::env::temp_dir().join("my_tui_fm_test_du");
+        let tmp = std::env::temp_dir().join("finder_tui_test_du");
         let _ = fs::remove_dir_all(&tmp);
         std::fs::create_dir_all(tmp.join("sub")).unwrap();
         std::fs::write(tmp.join("a.txt"), [0u8; 100]).unwrap();

@@ -49,7 +49,7 @@ pub fn draw(f: &mut Frame<'_>, app: &mut App) {
     };
     let header_left = Paragraph::new(Line::from(vec![
         Span::styled(
-            "my-tui-fm",
+            "finder",
             Style::default()
                 .fg(app.theme.accent)
                 .add_modifier(Modifier::BOLD),
