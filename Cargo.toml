@@ -1,0 +1,43 @@
+[package]
+name = "my-tui-fm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# TUI rendering
+ratatui = "0.27"
+crossterm = "0.27"
+
+# Filesystem helpers
+walkdir = "2.5"
+ignore = "0.4"
+path-absolutize = "3.0"
+
+# Display-width aware padding (emoji-safe alignment)
+unicode-width = "0.1"
+
+# Async + event handling
+tokio = { version = "1.38", features = ["full"] }
+
+# Syntax highlighting for text preview
+syntect = "5.2"
+
+# Archive contents listing / extract / compress (zip, tar, tar.gz)
+zip = { version = "2.2", optional = true, default-features = false, features = ["deflate"] }
+tar = { version = "0.4", optional = true }
+flate2 = { version = "1.0", optional = true, default-features = false, features = ["rust_backend"] }
+
+# Dynamic plugin loading
+libloading = "0.8"
+
+# Serialization for config / theme files
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+
+# Logging / diagnostics
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[features]
+default = ["archive"]
+archive = ["zip", "tar", "flate2"]

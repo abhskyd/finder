@@ -1,0 +1,16 @@
+# Build artifacts
+/target
+**/*.rs.bk
+
+# Dynamically loaded plugins (built separately)
+plugins/*
+!plugins/.gitkeep
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Python bytecode
+__pycache__/
