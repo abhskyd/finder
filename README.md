@@ -140,15 +140,29 @@ Press `Enter` to execute, `Esc` to cancel.
 
 ## Installation
 
-### Homebrew (recommended)
+### Homebrew (recommended — prebuilt binary, installs in seconds)
 
 ```bash
 brew tap abhskyd/tap
-brew trust abhskyd/tap   # Homebrew 7+ requires trusting third-party taps
 brew install finder
 ```
 
-Builds from source with `cargo` (Rust is installed automatically as a build dependency).
+Or in one line: `brew install abhskyd/tap/finder`.
+
+Apple Silicon gets a prebuilt binary (no toolchain needed). Intel macs and
+Linux build from source with `cargo` (Rust is installed automatically as a
+build dependency). Homebrew 7+ may ask you to trust the tap once — that's a
+one-time confirmation (see [Tap Trust](https://docs.brew.sh/Tap-Trust)).
+
+### One-line script (no Homebrew needed)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/abhskyd/finder/main/install.sh | sh
+```
+
+Downloads the prebuilt binary to `/opt/homebrew/bin` (or `~/.local/bin`) and
+prints a PATH note if needed. macOS Apple Silicon only — other platforms
+should use Homebrew (source build) or build manually.
 
 ### From source
 
