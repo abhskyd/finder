@@ -12,6 +12,12 @@ use ratatui::backend::CrosstermBackend;
 use std::io;
 
 fn main() -> io::Result<()> {
+    // --version: print and exit (also used by the Homebrew test block).
+    if std::env::args().any(|a| a == "--version" || a == "-V") {
+        println!("finder {}", env!("CARGO_PKG_VERSION"));
+        return Ok(());
+    }
+
     // If we panic, restore the terminal so it isn't left in raw mode /
     // alternate screen.
     let original_hook = std::panic::take_hook();

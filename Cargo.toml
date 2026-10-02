@@ -1,7 +1,7 @@
 [package]
 name = "finder"
 description = "A fast, modern TUI file manager — sidebar, fuzzy finder, git integration, async previews, archive extract/compress"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 
