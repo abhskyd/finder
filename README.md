@@ -140,6 +140,18 @@ Press `Enter` to execute, `Esc` to cancel.
 
 ## Installation
 
+### Homebrew (recommended)
+
+```bash
+brew tap abhskyd/tap
+brew trust abhskyd/tap   # Homebrew 7+ requires trusting third-party taps
+brew install finder
+```
+
+Builds from source with `cargo` (Rust is installed automatically as a build dependency).
+
+### From source
+
 ```bash
 git clone https://github.com/abhskyd/finder
 cd finder
